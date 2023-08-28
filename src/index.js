@@ -1,4 +1,5 @@
-import "./style.css";
+import "./base.css";
+import "./alt-01.css";
 import { getDepartures, getStop } from "./api.js";
 import { parse } from "./tmpl";
 import { formatTime, formatDate, formatIcon, formatWaitTime } from "./format";
@@ -7,9 +8,9 @@ const REFRESH_INTERVAL = 10_1000;
 
 const DEPARTURE_TMPL = `
 <tr>
+<td><strong>{formatIcon(line.product)}&nbsp;{line.name}</strong></td>
 <td>{formatWaitTime(when)}</td>
 <td>{formatTime(when)}</td>
-<td>{formatIcon(line.product)}&nbsp;{line.name}</td>
 <td>{destination.name}</td>
 </tr>
 `;
